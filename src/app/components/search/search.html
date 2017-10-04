@@ -1,0 +1,33 @@
+<div class="match-found-modal"
+     [class.match-found-modal--open]="matchFoundModalOpen">
+	<app-match-found-modal-component
+		[avatarSrc]="candidate.image"
+		[matchName]="candidate.name"
+		(matchModalContinue)="handleMatchModalContinue()"
+		(matchModalToMatches)="handleMatchModalToMatches()"></app-match-found-modal-component>
+</div>
+<div class="candidate-wrapper">
+	<div class="candidate">
+		<button (click)="onDislike()"
+		        class="candidate__dislike-button"></button>
+		<div class="candidate__avatar">
+			<img [src]="candidate.image"
+			     class="candidate__avatar-image"
+			     [class.candidate__avatar-image--shown]="!isFetching"
+			     alt="avatar">
+			<div class="spinner loader"
+			     [class.spinner--shown]="isFetching">Loading...</div>
+			<p class="candidate__name"
+			   [class.candidate__name--shown]="!isFetching">{{candidate.name}}</p>
+		</div>
+		<button (click)="onLike()"
+		        class="candidate__like-button"></button>
+	</div>
+
+</div>
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+@devices: ~"only screen and (max-width: 756px)";
+
+@preference-select-wrapper-margin: 70px 0 0;
+@preference-select-button__border: 1px solid #000;
+@preference-select-button__border--hover: 2px solid #000;
+
+@preference-select-subtitle__font-size--mobile: 30px;
+
+.preference-select-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: @preference-select-wrapper-margin;
+}
+
+.preference-select {
+    &__title {
+        letter-spacing: 8px;
+        margin-bottom: 25px;
+    }
+
+    &__sub-title {
+        letter-spacing: 8px;
+        margin-top: 25px;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .boy-button {
+        background: url(../../../assets/icons/male.svg) center center;
+        background-size: cover;
+    }
+
+    .girl-button {
+        background: url(../../../assets/icons/female.svg) center center;
+        background-size: cover;
+    }
+}
+
+@media @devices {
+    .preference-select {
+        width: 100%;
+
+        &__title,
+        &__sub-title {
+            text-align: center;
+            font-size: @preference-select-subtitle__font-size--mobile;
+        }
+
+        &__button {
+            height: 80px;
+            width: 80px;
+        }
+    }
+}

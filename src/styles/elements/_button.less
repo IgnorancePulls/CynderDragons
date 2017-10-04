@@ -1,0 +1,22 @@
+@primary-button__border-color: @color-black;
+@primary-button__border: 1px solid @primary-button__border-color;
+@primary-button__border--hover: 2px solid @primary-button__border-color;
+@primary-button__font-family: @font-family__primary;
+
+button {
+    height: 120px;
+    width: 120px;
+    border-radius: 100%;
+    border: @primary-button__border;
+    background: transparent;
+    cursor: pointer;
+    font-family: @primary-button__font-family;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        border: @primary-button__border--hover;
+    }
+}

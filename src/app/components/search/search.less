@@ -1,0 +1,119 @@
+@devices: ~"only screen and (max-width: 756px)";
+
+@candidate-avatar-image__margin: 0 auto;
+
+@candidate-name__font-size--mobile: 25px;
+
+.candidate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
+
+    &__name {
+        text-align: center;
+        visibility: hidden;
+
+        &--shown {
+            visibility: visible;
+        }
+    }
+
+    &__avatar {
+        height: 500px;
+        width: 600px;
+        position: relative;
+    }
+
+    &__avatar-image {
+        max-height: 500px;
+        max-width: 500px;
+        margin: @candidate-avatar-image__margin;
+        display: block;
+        visibility: hidden;
+
+        &--shown {
+            visibility: visible;
+        }
+    }
+
+    &__dislike-button {
+        background: url(../../../assets/icons/close.svg) center center;
+        background-size: cover;
+    }
+
+    &__like-button {
+        background: url(../../../assets/icons/heart.svg) center center;
+        background-size: cover;
+    }
+
+    &__dislike-button,
+    &__like-button {
+        border-color: transparent;
+
+        &:hover {
+            border-width: 1px;
+            background-size: 98%;
+        }
+    }
+}
+
+.spinner {
+    display: none;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    &--shown {
+        display: block;
+    }
+}
+
+.match-found-modal {
+    display: none;
+
+    &--open {
+        display: block;
+    }
+}
+
+@media @devices {
+    .candidate {
+        flex-wrap: wrap;
+
+        &__name {
+            font-size: @candidate-name__font-size--mobile;
+            white-space: nowrap;
+        }
+
+        &__avatar {
+            height: auto;
+            width: 320px;
+            order: 1;
+            flex-basis: 100%;
+            min-height: 365px;
+        }
+
+        &__avatar-image {
+            height: auto;
+            width: 100%;
+        }
+
+        &__dislike-button {
+            order: 2;
+            height: 80px;
+            width: 80px;
+        }
+
+        &__like-button {
+            order: 3;
+            height: 100px;
+            width: 100px;
+        }
+    }
+}

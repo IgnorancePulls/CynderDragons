@@ -1,0 +1,34 @@
+@devices: ~"only screen and (max-width: 756px)";
+
+@match__margin: 0 0 20px 40px;
+@match-name__font-size: 20px;
+@match-name__margin: 0 0 0 30px;
+@match-image__border: 1px solid;
+@match-image__border-radius: 100%;
+
+@match__margin--mobile: 0 0 20px 0;
+
+.match {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: @match__margin;
+
+    &__image {
+        height: 80px;
+        width: 80px;
+        border: @match-image__border;
+        border-radius: @match-image__border-radius;
+    }
+
+    &__name {
+        font-size: @match-name__font-size;
+        margin: @match-name__margin;
+    }
+}
+
+@media @devices {
+    .match {
+        margin: @match__margin--mobile;
+    }
+}

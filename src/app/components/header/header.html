@@ -1,0 +1,18 @@
+<div class="header-container">
+	<div class="header-container__title" (click)="toHome()">
+		<h1 class="header-container__app-name">Dragonzz</h1>
+	</div>
+	<div class="nav-container">
+		<div class="nav-container__item nav-item">
+			<a class="nav-item__matches-link" (click)="toMatches()">
+				<span class="nav-item__greetings">Hey &ngsp;</span>
+				<span class="nav-item__user-name"> {{accountName}}</span>
+				<img class="nav-item__user-image"
+				     [src]="avatarSrc">
+			</a>
+		</div>
+		<div class="nav-container__item nav-item" (click)="toSearch()">
+			<a class="nav-item__search-link"></a>
+		</div>
+	</div>
+</div>

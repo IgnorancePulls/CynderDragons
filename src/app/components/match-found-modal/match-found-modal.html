@@ -1,0 +1,11 @@
+<div class="new-match-modal-wrapper">
+	<div class="new-match-modal">
+		<h1 class="new-match-modal__match-title">You have new match!</h1>
+		<img class="new-match-modal__match-image" [src]="avatarSrc">
+		<p class="new-match-modal__match-name">{{matchName}}</p>
+		<div class="new-match-modal__buttons">
+			<button (click)="continue()" class="new-match-modal__button continue-button">Continue</button>
+			<button (click)="toMatches()" class="new-match-modal__button go-to-matches--button">Go to matches</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,30 @@
+@devices: ~"only screen and (max-width: 756px)";
+
+@matches-list__margin: 47px 0 0 0;
+@matches-list-title__font-size: 40px;
+
+@matches__margin--mobile: 10px 10px;
+@matches-list-title__font-size--mobile: 20px;
+
+.matches {
+    margin: @matches-list__margin;
+
+    &__list-title {
+        font-size: @matches-list-title__font-size;
+        text-align: center;
+    }
+
+    &__list {
+        margin: @matches-list__margin;
+    }
+}
+
+@media @devices {
+    .matches {
+        margin: @matches__margin--mobile;
+
+        &__list-title {
+            font-size: @matches-list-title__font-size--mobile;
+        }
+    }
+}

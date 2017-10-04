@@ -1,0 +1,121 @@
+@devices: ~"only screen and (max-width: 756px)";
+
+@header-container__padding: 10px 0 20px;
+@header-container__margin: 0 40px;
+@header-container__border-color: #000;
+@header-container__border: 1px solid @header-container__border-color;
+@nav-item-greetings__margin: 0 7px 0 0;
+
+@header-container__margin--mobile: 0 10px;
+@header-container-title__margin--mobile: 0 0 10px 0;
+@header-container-app-name__font-size--mobile: 40px;
+@nav-item-user-image__border--mobile: 1px solid;
+@nav-item-searc-link__margin--mobile: 0 auto;
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: @header-container__margin;
+    padding: @header-container__padding;
+    border-bottom: @header-container__border;
+
+    &__title {
+        cursor: pointer;
+    }
+}
+
+.nav-container {
+    display: flex;
+}
+
+.nav-item {
+    cursor: pointer;
+
+    &__matches-icon {
+        height: 30px;
+        width: 30px;
+        position: relative;
+        display: block;
+    }
+
+    &__user-image {
+        height: 54px;
+        width: 76px;
+    }
+
+    &__search-link {
+        position: relative;
+        height: 54px;
+        width: 76px;
+        display: block;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            margin: auto;
+            height: 100%;
+            width: 100%;
+            background: url(../../../assets/icons/gem.svg) center center;
+            background-size: cover;
+        }
+    }
+
+    &__greetings {
+        margin: @nav-item-greetings__margin;
+    }
+
+    &__matches-link {
+        height: 100%;
+        display: flex;
+        align-items: baseline;
+    }
+}
+
+@media @devices {
+    .header-container {
+        margin: @header-container__margin--mobile;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &__title {
+            flex-basis: 100%;
+            text-align: center;
+            margin: @header-container-title__margin--mobile;
+        }
+
+        &__app-name {
+            font-size: @header-container-app-name__font-size--mobile;
+        }
+    }
+
+    .nav-container {
+        flex-basis: 100%;
+
+        &__item {
+            flex-basis: 50%;
+        }
+    }
+
+    .nav-item {
+        &__greetings {
+            display: none;
+        }
+
+        &__user-name {
+            display: none;
+        }
+
+        &__user-image {
+            width: 54px;
+            border: @nav-item-user-image__border--mobile;
+            border-radius: 100%;
+            margin: 0 auto;
+        }
+
+        &__search-link {
+            margin: @nav-item-searc-link__margin--mobile;
+        }
+    }
+}
