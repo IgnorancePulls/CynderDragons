@@ -22,7 +22,7 @@ export class GetNewCandidateComplete implements Action {
 export class GetNewCandidateFailed implements Action {
     readonly type: string = GET_NEW_CANDIDATE_FAILED;
 
-    constructor(public payload: JSON) {
+    constructor(public payload: any) {
     }
 }
 
