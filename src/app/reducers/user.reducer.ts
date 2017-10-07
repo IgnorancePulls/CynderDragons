@@ -4,8 +4,8 @@ import * as user from '../actions/user.actions';
 export interface State {
     id: number;
     name: string;
-    prefer: string;
-    avatarSrc: string;
+    prefer?: string;
+    avatarSrc?: string;
 }
 
 const initialState: State = {

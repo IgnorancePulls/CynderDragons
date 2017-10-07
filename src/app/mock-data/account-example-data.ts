@@ -12,8 +12,8 @@ export const MockUserAccount: User = {
 };
 
 export const EmptyUserAccount: User = {
-    id: 1,
-    name: 'Awesome Dragon',
-    prefer: 'girl',
-    avatarSrc: '../../../assets/images/avatar.svg'
+    id: null,
+    name: null,
+    prefer: null,
+    avatarSrc: null
 }
