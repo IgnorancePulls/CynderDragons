@@ -21,7 +21,7 @@ describe('UserReducer', () => {
             prefer: 'girl',
             avatarSrc: '../../../assets/images/avatar.svg'
         };
-        
+
         const state: State = reducer(undefined, {type: user.SET_CURRENT_USER, payload: expectedState});
         expect(state).toEqual(expectedState);
     });

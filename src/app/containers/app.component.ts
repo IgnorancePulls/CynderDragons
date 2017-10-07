@@ -3,8 +3,9 @@ import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs/Observable';
 import {go} from '@ngrx/router-store';
 
-import {CreateMockAccount} from '../mock-data/account-example-data';
+import * as mockData from '../mock-data/account-example-data';
 import * as fromRoot from '../reducers';
+import * as user from '../actions/user.actions';
 
 @Component({
     selector: 'app-root',
@@ -28,7 +29,8 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit() {
-        CreateMockAccount(this.store);
+        const mockAccount = mockData.MockUserAccount;
+        this.store.dispatch(new user.SetCurrentUserAction(mockAccount));
     }
 
     handleNavigateToMatches() {
