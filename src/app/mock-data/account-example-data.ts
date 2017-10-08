@@ -1,8 +1,4 @@
-import {Store} from '@ngrx/store';
 import {User} from '../models/user.model';
-
-import * as fromRoot from '../reducers';
-import * as fromUser from '../actions/user.actions';
 
 export const MockUserAccount: User = {
     id: 1,
